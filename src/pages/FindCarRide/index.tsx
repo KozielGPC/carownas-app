@@ -271,7 +271,7 @@ export default function FindCarRide() {
                     stroke-width={2}
                 />
             </svg>
-            <div className="flex justify-start items-center w-[124.76px] h-[21.7px] absolute left-[203px] top-[54px] gap-[10.848685264587402px]">
+            <div className="flex justify-start items-center w-[124.76px] h-[21.7px] absolute left-[203px] top-[20px] gap-[10.848685264587402px]">
                 <svg
                     width={22}
                     height={22}
@@ -389,7 +389,7 @@ export default function FindCarRide() {
                 />
                 <div className="w-[127px] h-[23.7px]">
                     <div className="w-[127px] h-[23.7px]">
-                        <div className="flex justify-start items-center w-[127px] h-[21.7px] absolute left-[35px] top-[55px] gap-[10.848685264587402px]">
+                        <div className="flex justify-start items-center w-[127px] h-[21.7px] absolute left-[35px] top-[20px] gap-[10.848685264587402px]">
                             <svg
                                 width={22}
                                 height={22}
@@ -424,7 +424,7 @@ export default function FindCarRide() {
                             viewBox="0 0 11 10"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="absolute left-[45.7px] top-[52.5px]"
+                            className="absolute left-[45.7px] top-[22.5px]"
                             preserveAspectRatio="xMidYMid meet"
                         >
                             <ellipse cx="5.28729" cy={5} rx="5.08978" ry={5} fill="#FF0000" />

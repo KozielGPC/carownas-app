@@ -1,0 +1,201 @@
+.page {
+    background-color: #282f2d;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 16px;
+    background-color: #282f2d;
+    color: white;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-left > i {
+    margin-right: 8px;
+  }
+  
+  .header-right > i {
+    font-size: 32px;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 768px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 128px;
+    padding: 16px;
+    background-color: #f0f0f0;
+  }
+  
+  .card-left > i {
+    font-size: 48px;
+    margin-right: 16px;
+  }
+  
+  .star-rating {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .star-rating > i {
+    margin-right: 4px;
+    color: #ffc107;
+  }
+  
+  .card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .card-right-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .card-right-item > i {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+  .card-button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .card-button > i {
+    font-size: 24px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .button {
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #282f2d;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #3c444c;
+  }
+  
+  .input-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container > input {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: black;
+    margin-right: 8px;
+  }
+
+  .card-button > i {
+    font-size: 24px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .button {
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #282f2d;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #3c444c;
+  }
+  
+  .input-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container > input {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: black;
+    margin-right: 8px;
+  }
+  
+  .input-button {
+    font-size: 24px;
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: #282f2d;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .input-button:hover {
+    background-color: #3c444c;
+  }
+  
