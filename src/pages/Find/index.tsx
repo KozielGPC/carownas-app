@@ -1,138 +1,142 @@
+import {
+    FaAngleDoubleRight,
+    FaArrowRight,
+    FaBell,
+    FaClock,
+    FaMapMarkerAlt,
+    FaQuestionCircle,
+    FaStar,
+    FaUser,
+    FaUsers,
+} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaBell, FaChevronRight, FaQuestionCircle, FaStar, FaUser } from 'react-icons/fa';
 
 export default function Find() {
     return (
-        <div className="w-[375px] h-[812px] relative overflow-hidden bg-white bg-[#282f2d]">
-            <div className="w-[375px] h-[50px] flex flex-row justify-around items-center">
-                <header className="flex justify-center items-center">
-                    <button aria-label="Notifications" className="text-xl mr-4 text-white flex items-center">
-                        <FaBell />
-                        Notifications
-                    </button>
-                    <button aria-label="Ajuda" className="text-xl mr-4 text-white flex items-center">
-                        <FaQuestionCircle />
-                        Ajuda
-                    </button>
-                    <button aria-label="User profile" className="text-xl mr-4 text-white flex items-center">
-                        <FaUser />
-                    </button>
-                </header>
-                {/* <p className="flex-grow-0 flex-shrink-0 text-base font-semibold text-left text-white">Notificações</p>
-                <p className="flex-grow-0 flex-shrink-0 text-base font-semibold text-left text-white">Ajuda</p> */}
+        <div className="bg-gray-800 h-screen flex flex-col">
+            {/* Header */}
+            <div className="bg-gray-700 px-4 py-3 flex justify-between items-center">
+                <div className="text-gray-300">
+                    <FaBell className="w-6 h-6 mr-2" />
+                    Notificações
+                </div>
+                <div className="text-gray-300 ml-8">
+                    <FaQuestionCircle className="w-6 h-6 mr-2" />
+                    Ajuda
+                </div>
+                <div className="ml-auto text-gray-300">
+                    <FaUser className="w-6 h-6 mr-2" />
+                </div>
             </div>
 
-            <div className="w-[375px] h-[30px] flex flex-row justify-between items-center">
-                <p className="flex-grow-0 flex-shrink-0 text-base font-semibold text-left text-gray-400 relative left-[15px]">
-                    Caronas Disponíveis
-                </p>
-                <p className="flex-grow-0 flex-shrink-0 text-base font-semibold text-left text-gray-400 relative right-[35px]">
-                    º º º
-                </p>
+            {/* Caronas disponiveis */}
+            <div className="px-4 py-3 flex justify-center items-center">
+                <h1 className="text-left text-2xl text-gray-300">Caronas Disponíveis</h1>
             </div>
 
-            <div className="relative">
-                <div className="bg-gray-800 rounded-lg p-6 flex">
-                    <div className="mr-6">
-                        <FaUser className="text-4xl text-white" />
-                        <div className="mt-2 flex items-center text-white">
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
+            {/* Cards principais */}
+            <div className="flex justify-center mt-10">
+                <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-600">
+                    <div className="px-6 py-4">
+                        <div className="flex items-center text-gray-300">
+                            <FaUser className="w-12 h-12 mr-2" />
+                            <div className="flex flex-col">
+                                <p className="text-xl font-bold text-gray-300">Nome do Motorista</p>
+                                <div className="flex items-center mt-1">
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex mt-4 text-gray-300">
+                            <FaMapMarkerAlt className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Localização</p>
+                        </div>
+                        <div className="flex mt-2 text-gray-300">
+                            <FaClock className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Hora de Partida</p>
+                        </div>
+                        <div className="flex mt-2 text-gray-300">
+                            <FaUsers className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Vagas Preenchidas</p>
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                            <button className="bg-white text-gray-800 hover:bg-gray-100 rounded-full py-2 px-4">
+                                <FaArrowRight className="w-4 h-4" />
+                            </button>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-between">
-                        <div className="text-xl font-bold text-white">Centro</div>
-                        <div className="text-xl font-bold text-white">19:30</div>
-                        <div className="text-xl font-bold text-white">3/4</div>
-                    </div>
-                    <button className="absolute bottom-0 right-0 rounded-full bg-white text-gray-800 p-3 flex items-center justify-center w-12 h-12">
-                        <FaChevronRight className="w-4 h-4" />
-                    </button>
                 </div>
-
-                <div className="bg-gray-800 rounded-lg p-6 flex">
-                    <div className="mr-6">
-                        <FaUser className="text-4xl text-white" />
-                        <div className="mt-2 flex items-center text-white">
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                            <FaStar className="w-4 h-4" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col justify-between">
-                        <div className="text-xl font-bold text-white">Centro</div>
-                        <div className="text-xl font-bold text-white">19:30</div>
-                        <div className="text-xl font-bold text-white">3/4</div>
-                    </div>
-                    <button className="absolute bottom-0 right-0 rounded-full bg-white text-gray-800 p-3 flex items-center justify-center w-12 h-12">
-                        <FaChevronRight className="w-4 h-4" />
-                    </button>
-                </div>
-                {/* <div className="w-[334px] h-[171.56px] bg-[#393b4e] rounded-[20px] relative left-[17.5px] top-[30px]">
-                    <div className="relative"></div>
-                    <p className="w-[113px] h-[39px] relative left-[200px] top-[20px] text-[28px] font-bold text-left text-[#d8d8d8]">
-                        Centro
-                    </p>
-                    <p className="w-[86px] h-[39px] relative left-[200px] top-[30px] text-[27px] font-bold text-left text-[#d8d8d8]">
-                        19:30
-                    </p>
-                    <p className="w-11 h-[29px]  relative left-[200px] top-[40px] text-[27px] font-bold text-left text-[#d8d8d8]">
-                        3/4
-                    </p>
-                </div>
-
-                <div className="w-[334px] h-[171.56px] bg-[#393b4e] rounded-[20px] relative left-[17.5px] top-[50px]">
-                    <p className="w-[113px] h-[39px] relative left-[200px] top-[20px] text-[28px] font-bold text-left text-[#d8d8d8]">
-                        Centro
-                    </p>
-                    <p className="w-[86px] h-[39px] relative left-[200px] top-[30px] text-[27px] font-bold text-left text-[#d8d8d8]">
-                        19:30
-                    </p>
-                    <p className="w-11 h-[29px]  relative left-[200px] top-[40px] text-[27px] font-bold text-left text-[#d8d8d8]">
-                        3/4
-                    </p>
-                </div> */}
             </div>
 
-            <div className="rounded-lg p-6 flex flex-col">
-                <div className="mb-4 flex items-center">
-                    <label htmlFor="from" className="mr-2 font-bold text-gray-100">
-                        De:
-                    </label>
-                    <input type="text" id="from" className="bg-gray-600 rounded p-2 w-full" />
+            <div className="flex justify-center mt-10">
+                <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-600">
+                    <div className="px-6 py-4">
+                        <div className="flex items-center text-gray-300">
+                            <FaUser className="w-12 h-12 mr-2" />
+                            <div className="flex flex-col">
+                                <p className="text-xl font-bold text-gray-300">Nome do Motorista</p>
+                                <div className="flex items-center mt-1">
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex mt-4 text-gray-300">
+                            <FaMapMarkerAlt className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Localização</p>
+                        </div>
+                        <div className="flex mt-2 text-gray-300">
+                            <FaClock className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Hora de Partida</p>
+                        </div>
+                        <div className="flex mt-2 text-gray-300">
+                            <FaUsers className="w-4 h-4 mr-1" />
+                            <p className="text-gray-300">Vagas Preenchidas</p>
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                            <button className="bg-white text-gray-800 hover:bg-gray-100 rounded-full py-2 px-4">
+                                <FaArrowRight className="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="mb-4 flex items-center">
-                    <label htmlFor="to" className="mr-2 font-bold text-gray-100">
-                        Para:
-                    </label>
-                    <input type="text" id="to" className="bg-gray-600 rounded p-2 w-full" />
-                </div>
-                <button className="relative w-12 h-12 mx-auto rounded-full bg-white text-gray-800 p-3 flex items-center justify-center">
-                    <FaChevronRight className="w-4 h-4" />
+            </div>
+
+            {/* Botoes de mapa e recentes */}
+            <div className="flex justify-between py-3 px-4 bg-gray-800">
+                <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Mapa</button>
+                <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
+                    Recentes
                 </button>
             </div>
-            {/* <div className="relative left-[30px] top-[70px]"> */}
 
-            {/* <div className="relative flex flex-row">
-                    <p className="text-xl font-bold text-left text-white w-[80px]">DE :</p>
-                    <input className="h-[30px] w-[200px] relative left-[20px]" type="text" name="" id="" />
+            {/* De e Para sessão */}
+            <div className="bg-gray-800 px-4 py-3 flex justify-between items-center flex flex-col">
+                <div className="flex flex-col">
+                    <label className="text-xl text-gray-300 block font-bold" htmlFor="de">
+                        De
+                    </label>
+                    <input className="bg-white rounded-full py-2 px-4 text-gray-800" type="text" id="de" />
                 </div>
-                <div className="relative top-[20px] flex flex-row">
-                    <p className=" text-xl font-bold text-left text-white w-[80px]">PARA :</p>
-                    <input className="h-[30px] w-[200px] relative left-[20px]" type="text" name="" id="" />
-                </div> */}
-
-            {/* <Link to="/map">
-                    <button className="bg-[#FFFFFF] w-[200px] h-[40px] rounded-[10px] relative top-[40px] left-[55px] font-bold">
-                        Confirmar
+                <div className="flex flex-col mt-4">
+                    <label className="text-xl text-gray-300 block font-bold" htmlFor="para">
+                        Para
+                    </label>
+                    <input className="bg-white rounded-full py-2 px-4 text-gray-800" type="text" id="para" />
+                </div>
+                <div className="ml-auto">
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
+                        <FaArrowRight className="w-4 h-4" />
                     </button>
-                </Link> */}
-            {/* </div> */}
+                </div>
+            </div>
         </div>
     );
 }
