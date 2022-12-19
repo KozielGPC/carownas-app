@@ -12,7 +12,7 @@ export default function UseTerms() {
                     consectetur adipiscing elit. Integer posuere erat a ante.
                 </div>
                 <div className="flex justify-end">
-                    <Link to="/teste">
+                    <Link to="/find">
                         <button className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:shadow-outline">
                             Aceitar
                         </button>

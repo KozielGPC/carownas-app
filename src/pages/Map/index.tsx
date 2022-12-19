@@ -1,5 +1,6 @@
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import MapImage from '../../assets/uno.png';
+import { Link } from 'react-router-dom';
+import MapImage from '../../assets/mapa.png';
 {
     /* importa a imagem do mapa */
 }
@@ -35,9 +36,11 @@ export default function Mapa() {
                     <input className="bg-white rounded-full py-2 px-4 text-gray-800" type="text" id="para" />
                 </div>
                 <div className="ml-auto">
-                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
-                        <FaArrowRight className="w-4 h-4" />
-                    </button>
+                    <Link to="/waiting">
+                        <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
+                            <FaArrowRight className="w-4 h-4" />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

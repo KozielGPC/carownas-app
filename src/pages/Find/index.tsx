@@ -132,9 +132,11 @@ export default function Find() {
                     <input className="bg-white rounded-full py-2 px-4 text-gray-800" type="text" id="para" />
                 </div>
                 <div className="ml-auto">
-                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
-                        <FaArrowRight className="w-4 h-4" />
-                    </button>
+                    <Link to="/map">
+                        <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
+                            <FaArrowRight className="w-4 h-4" />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
