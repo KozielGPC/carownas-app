@@ -12,12 +12,15 @@ export default function Mapa() {
                 <button className="text-gray-500 hover:text-gray-100 focus:outline-none">
                     <FaArrowLeft />
                 </button>
+
                 <h1 className="text-xl font-bold text-gray-100">Mapa</h1>
             </div>
             <img src={MapImage} alt="Mapa" className="mx-auto max-w-md rounded-lg shadow-lg" />{' '}
             {/* exibe a imagem do mapa */}
             <div className="flex justify-between py-3 px-4 bg-gray-800">
-                <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Mapa</button>
+                <Link to="/find">
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Caronas</button>
+                </Link>
                 <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
                     Recentes
                 </button>

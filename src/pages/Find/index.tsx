@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
     FaAngleDoubleRight,
     FaArrowRight,
@@ -10,8 +11,21 @@ import {
     FaUsers,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import CardRide from '../../components/cardRide';
+
+import { useCarRides } from '../../hooks/useCarRides';
+import { Ride } from '../../interfaces/iRide';
+import api from '../../providers';
 
 export default function Find() {
+    const [rides, setRides] = useState<Ride[]>([]);
+
+    useEffect(() => {
+        api.get<Ride[]>(`/car-rides`).then((response) => {
+            const rides = response.data;
+            setRides(rides);
+        });
+    }, []);
     return (
         <div className="bg-gray-800 h-screen flex flex-col">
             {/* Header */}
@@ -35,83 +49,18 @@ export default function Find() {
             </div>
 
             {/* Cards principais */}
-            <div className="flex justify-center mt-10">
-                <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-600">
-                    <div className="px-6 py-4">
-                        <div className="flex items-center text-gray-300">
-                            <FaUser className="w-12 h-12 mr-2" />
-                            <div className="flex flex-col">
-                                <p className="text-xl font-bold text-gray-300">Nome do Motorista</p>
-                                <div className="flex items-center mt-1">
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex mt-4 text-gray-300">
-                            <FaMapMarkerAlt className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Localização</p>
-                        </div>
-                        <div className="flex mt-2 text-gray-300">
-                            <FaClock className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Hora de Partida</p>
-                        </div>
-                        <div className="flex mt-2 text-gray-300">
-                            <FaUsers className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Vagas Preenchidas</p>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                            <button className="bg-white text-gray-800 hover:bg-gray-100 rounded-full py-2 px-4">
-                                <FaArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div className="flex justify-center mt-10">
-                <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-600">
-                    <div className="px-6 py-4">
-                        <div className="flex items-center text-gray-300">
-                            <FaUser className="w-12 h-12 mr-2" />
-                            <div className="flex flex-col">
-                                <p className="text-xl font-bold text-gray-300">Nome do Motorista</p>
-                                <div className="flex items-center mt-1">
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                    <FaStar className="w-4 h-4 mr-1 text-yellow-400" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex mt-4 text-gray-300">
-                            <FaMapMarkerAlt className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Localização</p>
-                        </div>
-                        <div className="flex mt-2 text-gray-300">
-                            <FaClock className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Hora de Partida</p>
-                        </div>
-                        <div className="flex mt-2 text-gray-300">
-                            <FaUsers className="w-4 h-4 mr-1" />
-                            <p className="text-gray-300">Vagas Preenchidas</p>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                            <button className="bg-white text-gray-800 hover:bg-gray-100 rounded-full py-2 px-4">
-                                <FaArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div className="rides" id="rides">
+                {rides.map((ride) => (
+                    <CardRide key={ride.id} ride={ride} />
+                ))}
             </div>
 
             {/* Botoes de mapa e recentes */}
             <div className="flex justify-between py-3 px-4 bg-gray-800">
-                <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Mapa</button>
+                <Link to="/map">
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Mapa</button>
+                </Link>
                 <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
                     Recentes
                 </button>
@@ -132,11 +81,9 @@ export default function Find() {
                     <input className="bg-white rounded-full py-2 px-4 text-gray-800" type="text" id="para" />
                 </div>
                 <div className="ml-auto">
-                    <Link to="/map">
-                        <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
-                            <FaArrowRight className="w-4 h-4" />
-                        </button>
-                    </Link>
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">
+                        <FaArrowRight className="w-4 h-4" />
+                    </button>
                 </div>
             </div>
         </div>
