@@ -32,9 +32,11 @@ function NewCarRide() {
     return (
         <div className="bg-gray-800 h-screen flex flex-col">
             <div className="w-full flex items-center justify-between px-4 py-6 bg-gray-900">
-                <button className="text-gray-500 hover:text-gray-100 focus:outline-none">
-                    <FaArrowLeft />
-                </button>
+                <Link to="/find">
+                    <button className="text-gray-500 hover:text-gray-100 focus:outline-none">
+                        <FaArrowLeft />
+                    </button>
+                </Link>
 
                 <h1 className="text-xl font-bold text-gray-100">Nova Carona</h1>
             </div>

@@ -49,9 +49,9 @@ export default function Find() {
             {/* Header */}
             <div className="w-full flex items-center justify-between px-4 py-6 bg-gray-900">
                 <h1 className="text-xl font-bold text-gray-100">Caronas Disponíveis</h1>
-                <Link to="/newcarride">
+                <Link to="/myrides">
                     <button className="text-white hover:text-gray-100 focus:outline-none rounded-full bg-gray-700 py-2 px-4">
-                        <FaPlus />
+                        Minhas caronas
                     </button>
                 </Link>
             </div>
@@ -69,9 +69,9 @@ export default function Find() {
                 <Link to="/map">
                     <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Mapa</button>
                 </Link>
-                <Link to="/myrides">
-                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
-                        Recentes
+                <Link to="/newcarride">
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto flex ">
+                        + Nova Carona
                     </button>
                 </Link>
             </div>
