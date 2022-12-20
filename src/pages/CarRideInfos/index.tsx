@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaStar, FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Ride } from '../../interfaces/iRide';
 import api from '../../providers';
 
 export default function CarRideInfos() {
+    const history = useHistory();
     const example_ride = {
         id: 0,
         rider_ra: '1111111',
@@ -28,6 +29,7 @@ export default function CarRideInfos() {
     const [stars, setStars] = useState<number>(example_ride.rider.stars);
     const [ride, setRide] = useState<Ride>(example_ride);
     const car_ride_id = localStorage.getItem('id_carona');
+    const ra_user = localStorage.getItem('ra_user');
     useEffect(() => {
         api.get<Ride>(`/car-rides/${car_ride_id}`).then((response) => {
             const ride = response.data;
@@ -36,6 +38,16 @@ export default function CarRideInfos() {
         });
     }, []);
 
+    const handleCancelButton = () => {
+        api.post<Ride>(`/car-rides/cancel`, {
+            car_ride_id: parseInt(car_ride_id ?? '1'),
+            passager_ra: ra_user,
+        })
+            .then((response) => {
+                history.push('/find');
+            })
+            .catch(() => alert('Um erro inesperado aconteceu'));
+    };
     return (
         <div className="bg-gray-800 h-screen flex flex-col items-center justify-between">
             <div className="w-full flex items-center justify-between px-4 py-6 bg-gray-900">
@@ -78,11 +90,12 @@ export default function CarRideInfos() {
                 </div>
             </div>
             <div className="w-full flex items-center justify-between px-4 py-6 bg-gray-900">
-                <Link to="/find">
-                    <button className="bg-yellow-500 hover:bg-yellow-600 focus:outline-none text-gray-900 font-bold py-2 px-4 rounded-full">
-                        Cancelar
-                    </button>
-                </Link>
+                <button
+                    className="bg-yellow-500 hover:bg-yellow-600 focus:outline-none text-gray-900 font-bold py-2 px-4 rounded-full"
+                    onClick={handleCancelButton}
+                >
+                    Cancelar
+                </button>
                 <Link to="/finish">
                     <button className="bg-yellow-500 hover:bg-yellow-600 focus:outline-none text-gray-900 font-bold py-2 px-4 rounded-full">
                         Finalizar

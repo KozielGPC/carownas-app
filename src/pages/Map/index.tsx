@@ -21,9 +21,11 @@ export default function Mapa() {
                 <Link to="/find">
                     <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white">Caronas</button>
                 </Link>
-                <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
-                    Recentes
-                </button>
+                <Link to="/myrides">
+                    <button className="bg-gray-700 hover:bg-gray-900 rounded-full py-2 px-4 text-white ml-auto">
+                        Recentes
+                    </button>
+                </Link>
             </div>
             <div className="bg-gray-800 px-4 py-3 flex justify-between items-center flex flex-col">
                 <div className="flex flex-col">
