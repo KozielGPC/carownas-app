@@ -47,7 +47,7 @@ export default function MyRides() {
 
             {/* Cards principais */}
 
-            <div className="rides" id="rides">
+            <div className="rides bg-gray-800" id="rides">
                 {rides.map((ride) => (
                     <CardRideInfo key={ride.id} ride={ride} />
                 ))}
